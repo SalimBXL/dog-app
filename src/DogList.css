@@ -1,0 +1,28 @@
+.DogList {
+    margin: auto;
+}
+
+.Dog {
+    filter: grayscale();
+}
+
+.Dog-img {
+    width: 90%;
+    border-radius: 50%;
+}
+
+.Dog:hover {
+    filter: none;
+    transition-duration: 800ms;
+}
+
+.Dog-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: top;
+    color: darkslategrey;
+    letter-spacing: 0.2em;
+    font-size: 1.4rem;
+    margin: 10px;
+    position: relative;
+}

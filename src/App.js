@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import Routing from "./Routing";
+import Navbar from "./Navbar";
 import './App.css';
 
-function App() {
+function App({dogs}) {
+
+  const dogsName = () => dogs.map(dog => dog.name);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar dogs={dogsName()}/>
+      <div className='container'>
+        <Routing dogs={dogs}/>
+      </div>
     </div>
   );
+}
+
+
+App.defaultProps = {
+  dogs: [
+    { name: "Whiskey", age: 5, src: "http://cdn.akc.org/content/article-body-image/siberian_husky_cute_puppies.jpg", facts: ["Fact One", "fact Two", "Fact Three"] },
+    { name: "Hazel", age: 5, src: "http://cdn.akc.org/content/article-body-image/rottie_cute_puppies.jpg", facts: ["Fact Four", "fact Five", "Fact Six"] },
+    { name: "Tubby", age: 5, src: "http://cdn.akc.org/content/article-body-image/pom_cute_puppies.jpg", facts: ["Fact Seven", "fact Eight", "Fact Nine"] }
+  ]
 }
 
 export default App;
